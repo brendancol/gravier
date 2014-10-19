@@ -13,7 +13,7 @@ def match_host(url):
 
 def match_port(url):
     p = _match(url, r"^.+?://.+?:(?P<item>\d+)($|[/?#])")
-    return int(p) if p else None
+    return int(p) if p else 80
 
 def match_path(url):
     return _match(url, r"^.+?://.+?(?P<item>/.*?)($|[?#])")

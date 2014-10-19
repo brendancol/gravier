@@ -52,13 +52,25 @@ class TestUrlParse():
         assert_dict_equal(query_params, self.correct_query_params)
 
     def test_parsed_url_instantiation(self):
-        parsed_url_object = url_parse.ParsedURL(self.http_url_encoded)
-        assert hasattr(parsed_url_object, 'protocol')
-        assert hasattr(parsed_url_object, 'host')
-        assert hasattr(parsed_url_object, 'query')
-        assert hasattr(parsed_url_object, 'port')
-        assert hasattr(parsed_url_object, 'fragment')
-        assert hasattr(parsed_url_object, 'path')
+        url_obj = url_parse.ParsedURL(self.http_url_encoded)
+        
+        assert hasattr(url_obj, 'protocol')
+        assert isinstance(url_obj.protocol, str)
+
+        assert hasattr(url_obj, 'host')
+        assert isinstance(url_obj.host, str)
+
+        assert hasattr(url_obj, 'query')
+        assert isinstance(url_obj.query, dict)
+
+        assert hasattr(url_obj, 'port')
+        assert isinstance(url_obj.port, int)
+
+        assert hasattr(url_obj, 'fragment')
+        assert isinstance(url_obj.fragment, str)
+
+        assert hasattr(url_obj, 'path')
+        assert isinstance(url_obj.path, str)
 
     def test_throw_error_on_invalid_url(self):
         assert_raises(ValueError, url_parse.ParsedURL, "jar jar binks")
