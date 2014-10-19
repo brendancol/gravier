@@ -2,8 +2,8 @@ from urllib.parse import unquote
 import re
 
 def _match(url, expression):
-        match = re.match(expression, url)
-        return match.groupdict()['item'] if match is not None else None
+    match = re.match(expression, url)
+    return match.groupdict()['item'] if match is not None else None
 
 def match_protocol(url):
     return _match(url, r"^((?P<item>.+?)://)?")
