@@ -1,9 +1,7 @@
-gravier
+Gravier [![Build Status](https://travis-ci.org/brendancol/gravier.svg)](https://travis-ci.org/brendancol/gravier)
 =======
 
 Utilities for common tasks encountered in the wild web (under construction)
-[![Build Status](https://travis-ci.org/brendancol/gravier.svg)](https://travis-ci.org/brendancol/gravier)
-
 
 ### Notes: 
 	1. Currently only contains simple url parser (url_parse module)
