@@ -2,7 +2,7 @@ gravier
 =======
 
 Utilities for common tasks encountered in the wild web (under construction)
-![alt tag](https://travis-ci.org/brendancol/gravier.svg)
+[![Build Status](https://travis-ci.org/brendancol/gravier.svg)](https://travis-ci.org/brendancol/gravier)
 
 
 ### Notes: 
