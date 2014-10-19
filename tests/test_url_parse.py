@@ -36,7 +36,7 @@ class TestUrlParse():
         correct_port = 6080
         assert url_parse.match_port(self.url_ending_in_port) == correct_port
         assert url_parse.match_port(self.url_ending_in_query) == correct_port
-        assert url_parse.match_port(self.url_ending_in_host) == None
+        assert url_parse.match_port(self.url_ending_in_host) == 80
 
     def test_match_path(self):
         correct_path = '/cgi-bin/browse-edgar'
@@ -53,7 +53,7 @@ class TestUrlParse():
 
     def test_parsed_url_instantiation(self):
         url_obj = url_parse.ParsedURL(self.http_url_encoded)
-        
+
         assert hasattr(url_obj, 'protocol')
         assert isinstance(url_obj.protocol, str)
 
@@ -65,9 +65,6 @@ class TestUrlParse():
 
         assert hasattr(url_obj, 'port')
         assert isinstance(url_obj.port, int)
-
-        assert hasattr(url_obj, 'fragment')
-        assert isinstance(url_obj.fragment, str)
 
         assert hasattr(url_obj, 'path')
         assert isinstance(url_obj.path, str)
