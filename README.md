@@ -16,10 +16,14 @@ Utilities for common tasks encountered in the wild web (under construction)
 ### Run tests
     $> nosetests -v
 
-       tests.test_url_parse.TestUrlParse.test_match_host ... ok
-       tests.test_url_parse.TestUrlParse.test_match_path ... ok
-       tests.test_url_parse.TestUrlParse.test_match_port ... ok
-       tests.test_url_parse.TestUrlParse.test_match_protocol ... ok
-       tests.test_url_parse.TestUrlParse.test_match_query ... ok
-       tests.test_url_parse.TestUrlParse.test_parsed_url_instantiation ... ok
-       tests.test_url_parse.TestUrlParse.test_throw_error_on_invalid_url ... ok
+       tests.test_url_parse.TestUrlParse.test_handle_no_protocol ... ok
+	   tests.test_url_parse.TestUrlParse.test_https_protocol ... ok
+	   tests.test_url_parse.TestUrlParse.test_index_html_path ... ok
+	   tests.test_url_parse.TestUrlParse.test_match_default_port_80 ... ok
+	   tests.test_url_parse.TestUrlParse.test_match_host ... ok
+	   tests.test_url_parse.TestUrlParse.test_match_path ... ok
+	   tests.test_url_parse.TestUrlParse.test_match_port ... ok
+	   tests.test_url_parse.TestUrlParse.test_match_protocol ... ok
+	   tests.test_url_parse.TestUrlParse.test_match_query ... ok
+	   tests.test_url_parse.TestUrlParse.test_parsed_url_instantiation ... ok
+	   tests.test_url_parse.TestUrlParse.test_throw_error_on_invalid_url ... ok

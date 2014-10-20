@@ -6,27 +6,27 @@ def _match(url, expression):
     return match.groupdict()['item'] if match is not None else None
 
 def match_protocol(url):
-    return _match(url, r"^((?P<item>.+?)://)?")
+    return _match(url, r'^((?P<item>.+?)://)?')
 
 def match_host(url):
-    return _match(url, r"^.+?://((?P<item>.+?)($|[:/?#]))?")
+    return _match(url, r'^.+?://((?P<item>.+?)($|[:/?#]))?')
 
 def match_port(url):
-    p = _match(url, r"^.+?://.+?:(?P<item>\d+)($|[/?#])")
+    p = _match(url, r'^.+?://.+?:(?P<item>\d+)($|[/?#])')
     return int(p) if p else 80
 
 def match_path(url):
-    return _match(url, r"^.+?://.+?(?P<item>/.*?)($|[?#])")
+    return _match(url, r'^.+?://.+?(?P<item>/.*?)($|[?#])')
 
 def match_query(url):
-    query_content = _match(url, r"^.+?://.+?[?](?P<item>.+?)($)")
+    query_content = _match(url, r'^.+?://.+?[?](?P<item>.+?)($)')
     if query_content:
-        return dict([i.split("=") for i in query_content.split('&')])
+        return dict([i.split('=') for i in query_content.split('&')])
     else:
         return None
 
 def match_fragment(url):
-    return _match(url, r"^.+?://.+?[#](?P<item>.+?)($|[?])")
+    return _match(url, r'^.+?://.+?[#](?P<item>.+?)($|[?])')
 
 def has_valid_url_structure(url):
     return set(url) & set('.:/')
