@@ -49,7 +49,6 @@ class TestUrlParse():
         assert url_parse.match_port(self.url_ending_in_host) == 80
 
     def test_match_path(self):
-        correct_path = '/cgi-bin/browse-edgar'
         assert url_parse.match_path(self.url_ending_in_path) == self.correct_path
         assert url_parse.match_path(self.url_ending_in_fragment) == self.correct_path
         assert url_parse.match_path(self.url_ending_in_query) == self.correct_path
@@ -58,9 +57,6 @@ class TestUrlParse():
         assert url_parse.match_path(self.url_ending_in_html) == '/index.html'
 
     def test_match_query(self):
-        query_params = url_parse.match_query(self.url_ending_in_query)
-        assert_dict_equal(query_params, self.correct_query_params)
-
         query_params = url_parse.match_query(self.url_ending_in_query)
         assert_dict_equal(query_params, self.correct_query_params)
 
